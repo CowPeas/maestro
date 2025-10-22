@@ -22,7 +22,7 @@ A modern threat modeling tool for Agentic AI systems based on the MAESTRO framew
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/maestro.git
+git clone https://github.com/CowPeas/maestro.git
 cd maestro
 ```
 
