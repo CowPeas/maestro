@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MAESTRO Threat Modeling Tool',
+  title: 'PAWAEYE Threat Modeling Tool',
   description: 'AI-powered threat modeling for Agentic AI systems',
 };
 

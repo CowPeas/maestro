@@ -36,7 +36,7 @@ export default async function DashboardPage() {
             Welcome, {session.user.name}!
           </h1>
           <p className="text-gray-600">
-            Analyze systems and manage security threats using the MAESTRO framework.
+            Analyze systems and manage security threats using the PAWAEYE framework.
           </p>
         </div>
 

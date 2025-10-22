@@ -77,7 +77,7 @@ export default function ThreatsListEnhanced({ threats: initialThreats }: Threats
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `maestro-threats-${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `pawaeye-threats-${new Date().toISOString().split('T')[0]}.json`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -100,7 +100,7 @@ export default function ThreatsListEnhanced({ threats: initialThreats }: Threats
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `maestro-threats-${new Date().toISOString().split('T')[0]}.csv`;
+    link.download = `pawaeye-threats-${new Date().toISOString().split('T')[0]}.csv`;
     link.click();
     URL.revokeObjectURL(url);
   };

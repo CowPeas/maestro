@@ -82,7 +82,7 @@ export async function parseSystemInput(input: string): Promise<ParsedSystem> {
 }
 
 /**
- * Threat Generator Agent - Identifies potential threats across all MAESTRO layers
+ * Threat Generator Agent - Identifies potential threats across all PAWAEYE layers
  * Uses Gemini 2.5 Flash with higher token limit for comprehensive threat analysis
  */
 export async function generateThreats(

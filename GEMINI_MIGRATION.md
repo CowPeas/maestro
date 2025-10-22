@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-MAESTRO has been successfully migrated from OpenAI GPT-4 to **Google Gemini 2.5 Flash** using Vercel AI SDK v4. This migration provides:
+PAWAEYE has been successfully migrated from OpenAI GPT-4 to **Google Gemini 2.5 Flash** using Vercel AI SDK v4. This migration provides:
 
 - ✅ **Faster response times** (Gemini 2.5 Flash is optimized for speed)
 - ✅ **Lower cost** (More cost-effective than GPT-4)
@@ -217,7 +217,7 @@ A web-based e-commerce platform with:
 ### **Threat Generator Agent**
 - Temperature: 0.5 (balanced creativity)
 - Max Tokens: 4,096
-- Role: Identifies threats across MAESTRO framework
+- Role: Identifies threats across PAWAEYE framework
 
 ### **Risk Assessor Agent**
 - Temperature: 0.2 (consistent scoring)

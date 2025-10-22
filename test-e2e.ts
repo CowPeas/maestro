@@ -1,5 +1,5 @@
 /**
- * End-to-End Test Script for MAESTRO Next.js Application
+ * End-to-End Test Script for PAWAEYE Next.js Application
  * Tests the complete AI threat analysis flow with Gemini 2.5 Flash
  */
 

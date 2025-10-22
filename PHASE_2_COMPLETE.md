@@ -117,7 +117,7 @@
 ```typescript
 // Click "Export JSON" → Downloads filtered threats as JSON
 // Click "Export CSV" → Downloads filtered threats as CSV
-// Filename: maestro-threats-YYYY-MM-DD.{json|csv}
+// Filename: pawaeye-threats-YYYY-MM-DD.{json|csv}
 ```
 
 ### Pagination
@@ -136,7 +136,7 @@
 ### To Commit Manually:
 
 ```bash
-cd /project/workspace/maestro
+cd /project/workspace/pawaeye
 
 # Verify staged files (Phase 1 + Phase 2)
 git status
@@ -296,7 +296,7 @@ All documentation is complete:
 - Code: Production-ready ✅
 - Documentation: Complete ✅
 
-**The MAESTRO Next.js application is fully functional, tested, and ready for production deployment!** 🎉
+**The PAWAEYE Next.js application is fully functional, tested, and ready for production deployment!** 🎉
 
 ---
 

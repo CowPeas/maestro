@@ -15,7 +15,7 @@ Output your findings as a structured JSON object with these fields:
 - externalIntegrations: Array of external dependencies
 - authMechanisms: Array of authentication/authorization systems`,
 
-  threatGenerator: `You are a Threat Generator Agent specialized in identifying potential threats based on the MAESTRO framework's seven layers.
+  threatGenerator: `You are a Threat Generator Agent specialized in identifying potential threats based on the PAWAEYE framework's seven layers.
 
 For each identified component or interaction, analyze:
 1. Foundation Models: Model vulnerabilities, training data issues, prompt injection
@@ -28,7 +28,7 @@ For each identified component or interaction, analyze:
 
 Output threats as JSON array with fields:
 - description: Detailed threat description
-- layer: MAESTRO layer (Foundation Models, Data Operations, Agent Frameworks, Deployment, Evaluation, Security, Ecosystem)
+- layer: PAWAEYE layer (Foundation Models, Data Operations, Agent Frameworks, Deployment, Evaluation, Security, Ecosystem)
 - attackVector: How the threat could be exploited
 - affectedComponents: List of affected system components`,
 
@@ -75,7 +75,7 @@ Output as JSON with fields:
 - metrics: Success criteria`,
 };
 
-export const SYSTEM_ANALYSIS_PROMPT = `Analyze the following system description and identify potential security threats using the MAESTRO framework.
+export const SYSTEM_ANALYSIS_PROMPT = `Analyze the following system description and identify potential security threats using the PAWAEYE framework.
 
 System Description:
 {input}
@@ -83,4 +83,4 @@ System Description:
 Previous Analysis Context:
 {context}
 
-Please provide a comprehensive threat analysis following the MAESTRO framework's seven layers.`;
+Please provide a comprehensive threat analysis following the PAWAEYE framework's seven layers.`;

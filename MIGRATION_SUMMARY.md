@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-Successfully migrated the MAESTRO Threat Modeling Tool from a split FastAPI + React/Vite architecture to a unified Next.js 14 full-stack application. **100% functionality maintained** with significant improvements in performance, developer experience, and deployment simplicity.
+Successfully migrated the PAWAEYE Threat Modeling Tool from a split FastAPI + React/Vite architecture to a unified Next.js 14 full-stack application. **100% functionality maintained** with significant improvements in performance, developer experience, and deployment simplicity.
 
 ## ✨ What Was Built
 
@@ -51,13 +51,13 @@ Successfully migrated the MAESTRO Threat Modeling Tool from a split FastAPI + Re
 #### AI Agents Layer (`src/lib/ai/`)
 - `agents.ts` - 4 specialized AI agents using Vercel AI SDK
   - **Input Parser Agent**: Extracts system components and relationships
-  - **Threat Generator Agent**: Identifies threats across 7 MAESTRO layers
+  - **Threat Generator Agent**: Identifies threats across 7 PAWAEYE layers
   - **Risk Assessor Agent**: Evaluates likelihood and impact (1-5 scale)
   - **Mitigation Planner Agent**: Develops immediate, short-term, and long-term strategies
   - Stream and non-stream analysis workflows
 - `prompts.ts` - System prompts for each agent
   - Detailed instructions for each agent role
-  - MAESTRO framework layer definitions
+  - PAWAEYE framework layer definitions
   - Structured output specifications
 
 #### API Routes (`src/app/api/`)
@@ -199,7 +199,7 @@ Return Results → Dashboard Display
 ### Phase 3: Advanced AI Features (Optional)
 - [ ] Threat correlation analysis
 - [ ] Historical trend visualization with Chart.js
-- [ ] Custom MAESTRO layer weights
+- [ ] Custom PAWAEYE layer weights
 - [ ] Fine-tuned model for specific domains
 - [ ] Batch system analysis
 
@@ -242,7 +242,7 @@ Return Results → Dashboard Display
 - [ ] Impact displayed as circles (1-5)
 - [ ] Mitigations are listed under each threat
 - [ ] Status badge shows correct color
-- [ ] MAESTRO layer is displayed
+- [ ] PAWAEYE layer is displayed
 
 ## 🛡️ Security Audit Status
 

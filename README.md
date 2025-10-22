@@ -1,6 +1,6 @@
-# MAESTRO Threat Modeling Tool
+# PAWAEYE Threat Modeling Tool
 
-A modern threat modeling tool for Agentic AI systems based on the MAESTRO framework.
+A modern threat modeling tool for Agentic AI systems based on the PAWAEYE framework.
 
 ## Features
 
@@ -22,8 +22,8 @@ A modern threat modeling tool for Agentic AI systems based on the MAESTRO framew
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/maestro.git
-cd maestro
+git clone https://github.com/yourusername/pawaeye.git
+cd pawaeye
 ```
 
 2. Set up the backend:
@@ -46,8 +46,8 @@ npm install
 
 5. Set up the database:
 ```bash
-createdb maestro
-psql maestro -c "CREATE EXTENSION vector;"
+createdb pawaeye
+psql pawaeye -c "CREATE EXTENSION vector;"
 ```
 
 6. Run database migrations:
