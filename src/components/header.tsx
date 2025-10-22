@@ -32,6 +32,12 @@ export default function Header({ user }: HeaderProps) {
               >
                 🔮 Analytics
               </a>
+              <a
+                href="/detection"
+                className="text-white hover:text-blue-100 transition-colors font-medium text-sm"
+              >
+                🚨 Detection
+              </a>
             </nav>
           </div>
           <div className="flex items-center space-x-4">

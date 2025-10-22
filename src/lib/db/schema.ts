@@ -99,6 +99,59 @@ export const analyticsSnapshotsRelations = relations(analyticsSnapshots, ({ one 
   }),
 }));
 
+// Threat Alerts table for real-time threat detection
+export const threatAlerts = pgTable('threat_alerts', {
+  id: serial('id').primaryKey(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+  severity: varchar('severity', { length: 20 }).notNull(), // Critical, High, Medium, Low
+  layer: varchar('layer', { length: 50 }).notNull(),
+  source: varchar('source', { length: 50 }).notNull(), // auto-scan, manual, external
+  status: varchar('status', { length: 20 }).notNull().default('Active'), // Active, Acknowledged, Resolved
+  detectedAt: timestamp('detected_at').defaultNow().notNull(),
+  acknowledgedAt: timestamp('acknowledged_at'),
+  resolvedAt: timestamp('resolved_at'),
+  metadata: text('metadata'), // JSON for additional data
+  userId: integer('user_id').references(() => users.id).notNull(),
+  relatedThreatId: integer('related_threat_id').references(() => threats.id),
+});
+
+// Detection Rules table for configurable threat detection
+export const detectionRules = pgTable('detection_rules', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  description: text('description').notNull(),
+  pattern: text('pattern').notNull(), // Detection pattern/keywords
+  severity: varchar('severity', { length: 20 }).notNull(),
+  layer: varchar('layer', { length: 50 }).notNull(),
+  isActive: integer('is_active').notNull().default(1), // 1 = active, 0 = inactive
+  notifyEmail: integer('notify_email').notNull().default(1),
+  notifyWebhook: integer('notify_webhook').notNull().default(0),
+  webhookUrl: text('webhook_url'),
+  userId: integer('user_id').references(() => users.id).notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
+// Relations for new tables
+export const threatAlertsRelations = relations(threatAlerts, ({ one }) => ({
+  user: one(users, {
+    fields: [threatAlerts.userId],
+    references: [users.id],
+  }),
+  relatedThreat: one(threats, {
+    fields: [threatAlerts.relatedThreatId],
+    references: [threats.id],
+  }),
+}));
+
+export const detectionRulesRelations = relations(detectionRules, ({ one }) => ({
+  user: one(users, {
+    fields: [detectionRules.userId],
+    references: [users.id],
+  }),
+}));
+
 // Type exports
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
@@ -110,3 +163,7 @@ export type ThreatPrediction = typeof threatPredictions.$inferSelect;
 export type NewThreatPrediction = typeof threatPredictions.$inferInsert;
 export type AnalyticsSnapshot = typeof analyticsSnapshots.$inferSelect;
 export type NewAnalyticsSnapshot = typeof analyticsSnapshots.$inferInsert;
+export type ThreatAlert = typeof threatAlerts.$inferSelect;
+export type NewThreatAlert = typeof threatAlerts.$inferInsert;
+export type DetectionRule = typeof detectionRules.$inferSelect;
+export type NewDetectionRule = typeof detectionRules.$inferInsert;
