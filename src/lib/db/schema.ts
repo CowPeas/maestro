@@ -152,6 +152,37 @@ export const detectionRulesRelations = relations(detectionRules, ({ one }) => ({
   }),
 }));
 
+// Image Intelligence table for geolocation analysis
+export const imageIntelligence = pgTable('image_intelligence', {
+  id: serial('id').primaryKey(),
+  imageUrl: text('image_url').notNull(),
+  fileName: varchar('file_name', { length: 255 }),
+  analysisType: varchar('analysis_type', { length: 50 }).notNull().default('geolocation'),
+  location: text('location'), // Identified location/country/city
+  coordinates: text('coordinates'), // Lat/long if identified
+  landmarks: text('landmarks'), // JSON array of landmarks
+  confidence: integer('confidence').notNull(), // 1-100
+  environmentalContext: text('environmental_context'), // Weather, time of day, etc
+  securityIndicators: text('security_indicators'), // JSON array of security concerns
+  fullAnalysis: text('full_analysis').notNull(), // Complete AI response
+  metadata: text('metadata'), // Additional metadata JSON
+  userId: integer('user_id').references(() => users.id).notNull(),
+  relatedThreatId: integer('related_threat_id').references(() => threats.id),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
+
+// Relations for image intelligence
+export const imageIntelligenceRelations = relations(imageIntelligence, ({ one }) => ({
+  user: one(users, {
+    fields: [imageIntelligence.userId],
+    references: [users.id],
+  }),
+  relatedThreat: one(threats, {
+    fields: [imageIntelligence.relatedThreatId],
+    references: [threats.id],
+  }),
+}));
+
 // Type exports
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
@@ -167,3 +198,5 @@ export type ThreatAlert = typeof threatAlerts.$inferSelect;
 export type NewThreatAlert = typeof threatAlerts.$inferInsert;
 export type DetectionRule = typeof detectionRules.$inferSelect;
 export type NewDetectionRule = typeof detectionRules.$inferInsert;
+export type ImageIntelligence = typeof imageIntelligence.$inferSelect;
+export type NewImageIntelligence = typeof imageIntelligence.$inferInsert;

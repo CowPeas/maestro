@@ -38,6 +38,12 @@ export default function Header({ user }: HeaderProps) {
               >
                 🚨 Detection
               </a>
+              <a
+                href="/intelligence"
+                className="text-white hover:text-blue-100 transition-colors font-medium text-sm"
+              >
+                🌍 Intelligence
+              </a>
             </nav>
           </div>
           <div className="flex items-center space-x-4">
