@@ -2,6 +2,25 @@
   "name": "pawaeye-nextjs",
   "version": "2.0.0",
   "private": true,
+  "description": "AI-Powered Threat Intelligence Platform with Predictive Analytics, Real-Time Detection & Image Geolocation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CowPeas/PawaEye.git"
+  },
+  "homepage": "https://github.com/CowPeas/PawaEye",
+  "bugs": {
+    "url": "https://github.com/CowPeas/PawaEye/issues"
+  },
+  "keywords": [
+    "nextjs",
+    "ai",
+    "threat-modeling",
+    "gemini",
+    "security",
+    "predictive-analytics",
+    "real-time-detection",
+    "image-intelligence"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
