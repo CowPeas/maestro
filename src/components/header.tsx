@@ -21,6 +21,12 @@ export default function Header({ user }: HeaderProps) {
             </div>
             <nav className="flex items-center space-x-6">
               <a
+                href="/chat"
+                className="text-white hover:text-blue-100 transition-colors font-medium text-sm"
+              >
+                💬 AI Chat
+              </a>
+              <a
                 href="/dashboard"
                 className="text-white hover:text-blue-100 transition-colors font-medium text-sm"
               >
